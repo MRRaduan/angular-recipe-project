@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  pageStatus = 'recipe';
+
+  receiveRoute($event) {
+    this.pageStatus = $event;
+  }
 }
