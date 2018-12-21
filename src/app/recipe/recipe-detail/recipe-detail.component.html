@@ -19,9 +19,14 @@
       </button>  
       <ul class="dropdown-menu">
         <li>
-            <a href="">Add ingredients to shopping list</a>
-            <a href="">AEdit recipe</a>
-            <a href="">Delete recipe</a>
+            <a
+              (click)="onAddToShoppingList()"
+              style="cursor: pointer;"
+            >
+              Add ingredients to shopping list
+            </a>
+            <a>Edit recipe</a>
+            <a>Delete recipe</a>
         </li>
       </ul>
     </div>
@@ -36,7 +41,14 @@
 
 <div class="row">
   <div class="col-xs-12"> 
-    Ingredients
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let ingredient of recipe.ingredients"
+      >
+      {{ ingredient.name }} - {{ ingredient.amount }}
+      </li>
+    </ul>
   </div>
 </div>
 
